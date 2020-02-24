@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class NumberWizard : MonoBehaviour
 {
+    int min = 1;
+    int max = 1000;
+    int guess = 501;
     // Start is called before the first frame update
     void Start()
     {
-        int min = 1;
-        int max = 1000;
-
         Debug.Log("Witaj w Grze Number Wizard!");
         Debug.Log("Wybierz liczbę z zakresu");
         Debug.Log("Najmniejsza to: " + min);
@@ -24,14 +24,19 @@ public class NumberWizard : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Debug.Log("Wcisnąłeś Do góry!");
+            min = guess+1;
+            Debug.Log(guess);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             Debug.Log("Wcisnąłeś Do dołu!");
+            max = guess;
+            Debug.Log(guess-1);
         }
-        if (Input.GetKeyDown(KeyCode.Return))
+        else if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Wcisnąłeś Enter.");
+            Debug.Log(guess);
         }
     }
 }
