@@ -6,7 +6,7 @@ public class NumberWizard : MonoBehaviour
 {
     int min = 1;
     int max = 1000;
-    int guess = 501;
+    int guess = 500;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,7 @@ public class NumberWizard : MonoBehaviour
         Debug.Log("Wybierz liczbę z zakresu");
         Debug.Log("Najmniejsza to: " + min);
         Debug.Log("Największa to: " + max);
-        Debug.Log("Powiedz mi czy twoja liczba jest mniejsza czy większa od 500");
+        Debug.Log("Powiedz mi czy twoja liczba jest mniejsza czy większa od " + guess);
         Debug.Log("Do góry = Większa, Do Dołu = Mniejsza, Enter = Trafiłem");
     }
 
@@ -24,19 +24,25 @@ public class NumberWizard : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Debug.Log("Wcisnąłeś Do góry!");
-            min = guess+1;
-            Debug.Log(guess);
+            min = guess + 1;
+            guess = (min + max) / 2;
+            Debug.Log("Powiedz mi czy twoja liczba jest mniejsza czy większa od " + guess);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             Debug.Log("Wcisnąłeś Do dołu!");
-            max = guess;
-            Debug.Log(guess-1);
+            if (guess > 1)
+                max = guess - 1;
+            else
+                max = guess;
+            guess = (min + max) / 2;
+            Debug.Log("Powiedz mi czy twoja liczba jest mniejsza czy większa od " + guess);
         }
         else if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Wcisnąłeś Enter.");
             Debug.Log(guess);
         }
+
     }
 }
