@@ -14,17 +14,13 @@ public class NumberWizard : MonoBehaviour
         Debug.Log("Wybierz liczbę z zakresu");
         Debug.Log("Najmniejsza to: " + min);
         Debug.Log("Największa to: " + max);
-<<<<<<< HEAD
         Debug.Log("Powiedz mi czy twoja liczba jest mniejsza czy większa od 500");
         Debug.Log("Do góry = Większa, Do Dołu = Mniejsza, Enter = Trafiłem");
-=======
->>>>>>> 053b65f1db82747d5e87c1ebec24ad97e51bf223
     }
 
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Debug.Log("Wcisnąłeś Do góry!");
@@ -37,8 +33,5 @@ public class NumberWizard : MonoBehaviour
         {
             Debug.Log("Wcisnąłeś Enter.");
         }
-=======
-
->>>>>>> 053b65f1db82747d5e87c1ebec24ad97e51bf223
     }
 }
